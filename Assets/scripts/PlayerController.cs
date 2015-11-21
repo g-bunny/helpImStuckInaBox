@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 //		SetCountText();
 //		winText.text = "";
 		if (isPlayer){
-			GameObject.Find("ZeroCam").GetComponent<Camera>().enabled = true;
+			transform.Find("ZeroCam").GetComponent<Camera>().enabled = true;
 			//cam.SetActive(true);
 		}
 	}
@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour {
 		if (!isPlayer){
 //			GameObject.Find ("Main Camera").SetActive(false);
 			GameObject.Find("ZeroCam").GetComponent<Camera>().enabled = false;
+			//GameObject.Find ("One").SetActive(false);
 		}
 	}
 
@@ -65,11 +66,13 @@ public class PlayerController : MonoBehaviour {
 
 		if (isPlayer){
 			float move = Input.GetAxis ("Horizontal") * .5f;
-			Vector3 movement = new Vector3 (move, 0, 0);
+			float zMove = Input.GetAxis ("Vertical") * .5f;
+			Vector3 movement = new Vector3 (move, 0, zMove);
 			anim.SetFloat ("vSpeed", GetComponent<Rigidbody>().velocity.y);
 		//CharacterController.speed = 3.0f;
 			anim.SetFloat ("Velocity", move);
-			GetComponent<Rigidbody>().velocity = new Vector2 (move * maxSpeed, GetComponent<Rigidbody>().velocity.y);
+			anim.SetFloat ("zVel", zMove);
+			GetComponent<Rigidbody>().velocity = new Vector3 (move * maxSpeed, GetComponent<Rigidbody>().velocity.y, zMove * maxSpeed);
 		}
 //		if (move > 0 && !facingRight) {
 //			Flip ();
