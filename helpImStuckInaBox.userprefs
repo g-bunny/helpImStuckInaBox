@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/experiment.shader">
+    <Files>
+      <File FileName="Assets/experiment.shader" Line="56" Column="34" />
+      <File FileName="../../../Downloads/builtin_shaders-5.2.2f1/DefaultResources/Internal-SplashShadowBlur.shader" Line="1" Column="1" />
+      <File FileName="Assets/scripts/PlayerController.cs" Line="58" Column="28" />
+      <File FileName="Assets/scripts/rotateCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/Clock.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/activateObject.cs" Line="1" Column="1" />
+      <File FileName="Assets/scripts/cameraTransition.cs" Line="1" Column="1" />
+      <File FileName="Assets/Shaders/NewSurfaceShader.shader" Line="1" Column="1" />
+      <File FileName="Assets/scripts/testShader.cs" Line="1" Column="1" />
+      <File FileName="Assets/Shaders/bubbles.shader" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
