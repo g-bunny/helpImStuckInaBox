@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController1 : MonoBehaviour {
 
 	public float Velocity;
 	public float maxSpeed = 10f;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public float jumpForce = 1f;
 	//public int incrementer;
-	public bool isPlayer = true;
+	public bool isPlayer = false;
 	private bool wasFalse;
 	//Camera cam;
 
@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour {
 //		count = 0;
 //		SetCountText();
 //		winText.text = "";
-		if (isPlayer){
-			transform.Find("ZeroCam").GetComponent<Camera>().enabled = true;
+		if (isPlayer == false){
+			transform.Find("OneCam").GetComponent<Camera>().enabled = false;
 			//cam.SetActive(true);
 		}
 	}
@@ -39,29 +39,30 @@ public class PlayerController : MonoBehaviour {
 	void Update() {
 
 		if (Input.GetKeyDown (KeyCode.LeftShift)){
-			if (isPlayer){
+			if (isPlayer == true){
 				isPlayer = false;
 			} else if (isPlayer == false){
 				isPlayer = true;
 			}
 		}
-		if (GetComponent<Rigidbody>().position.z >= -.5){
-			isPlayer = false;
-		}
+		//if(GameObject.Find ("Zero").isPlayer == false){
+		//	isPlayer = true;
+		//}
+
 		if (isPlayer == true){
 			if (Input.GetKeyDown (KeyCode.Space)) {
 				anim.SetBool ("Ground", false);
 				GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpForce,0));
 			}
 			//GameObject.Find ("Main Camera").SetActive(true);
-			GameObject.Find("ZeroCam").GetComponent<Camera>().enabled = true;
+			GameObject.Find("OneCam").GetComponent<Camera>().enabled = true;
 		}
-		Debug.Log(GetComponent<Rigidbody>().position.z);
-		if (!isPlayer){
+		if (isPlayer == false){
 //			GameObject.Find ("Main Camera").SetActive(false);
-			GameObject.Find("ZeroCam").GetComponent<Camera>().enabled = false;
+			GameObject.Find("OneCam").GetComponent<Camera>().enabled = false;
 			//GameObject.Find ("One").SetActive(false);
 		}
+
 	}
 
 	void FixedUpdate() {
