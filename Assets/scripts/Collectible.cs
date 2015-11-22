@@ -4,16 +4,19 @@ using System.Collections;
 public class Collectible : MonoBehaviour {
 	public static int collectCount;
 	public Transform player;
-	private Transform chimney = GameObject.Find("Chimney").GetComponent<Transform>();
-	Vector3 chimneyPos = chimney.localScale;
+	public Transform chimney;
+	//private Transform chimney = GameObject.Find("Chimney").GetComponent<Transform>();
+	//Vector3 chimneyPos = chimney.localScale;
 	void Start () {
-		chimney.localScale.x = 0f;
+		Vector3 chimneyScale = chimney.localScale;
+		chimneyScale.x = 0.0f;
+		chimney.localScale = chimneyScale;
 	}
 	
 	void Update () {
 		Debug.Log(collectCount);
-		if (collectCount >= 4){
-			chimney.localScale.x = 1f;
+		if (collectCount >= 5){
+			//chimney.localScale.x = 1f;
 		}
 	}
 	void OnTriggerEnter(Collider target)

@@ -51,6 +51,7 @@
      <Compile Include="Assets\scripts\Collectible.cs" />
      <Compile Include="Assets\scripts\PlayerController.cs" />
      <Compile Include="Assets\scripts\PlayerController1.cs" />
+     <Compile Include="Assets\scripts\PlayerController2.cs" />
      <Compile Include="Assets\scripts\PlayerMovement.cs" />
      <Compile Include="Assets\scripts\Rotater.cs" />
      <Compile Include="Assets\scripts\activateObject.cs" />
